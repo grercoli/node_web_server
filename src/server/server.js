@@ -1,8 +1,8 @@
-const express = require("express")
+import express from "express"
 // path es propio de Node y es para poder leer nuestras carpetas de la app
-const path = require("path")
+import path from "path"
 
-const startServer = (options) => {
+export const startServer = (options) => {
   const { port, public_path = "public" } = options
 
   // ejecutamos express y ponemos todo dentro de la variable app
@@ -27,8 +27,4 @@ const startServer = (options) => {
   app.listen(port, () => {
     console.log("Escuchando en el port:", port)
   })
-}
-
-module.exports = {
-  startServer
 }
